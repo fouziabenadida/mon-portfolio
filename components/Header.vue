@@ -1,14 +1,17 @@
 <template>
-    <v-app-bar flat height="72" color="transparent" class="modern-header">
-        <v-container class="d-flex justify-space-between align-center">
-            <NuxtLink to="/" class="brand">Fuziya</NuxtLink>
+    <v-app-bar flat height="72" class="figma-header">
+        <v-container class="header-content">
+            <NuxtLink to="/" class="logo">Fuziya<span>.</span></NuxtLink>
 
-            <nav class="menu">
-                <NuxtLink v-for="(link, index) in links" :key="index" :to="link.to" class="menu-link"
+            <nav class="nav-links">
+                <NuxtLink v-for="(link, i) in links" :key="i" :to="link.to" class="nav-link"
                     :class="{ active: $route.path === link.to }">
                     {{ link.label }}
                 </NuxtLink>
             </nav>
+
+            <!-- CTA Button -->
+            <NuxtLink to="/contact" class="cta">Let’s Talk</NuxtLink>
         </v-container>
     </v-app-bar>
 </template>
@@ -18,51 +21,78 @@ const links = [
     { label: 'Home', to: '/' },
     { label: 'Projects', to: '/projects' },
     { label: 'About', to: '/about' },
-    { label: 'Contact', to: '/contact' },
 ]
 </script>
 
 <style scoped>
-.modern-header {
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e5e7eb;
-    background: rgba(255, 255, 255, 0.8);
+.figma-header {
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    z-index: 1000;
 }
 
-.brand {
-    font-size: 22px;
-    font-weight: 700;
-    color: #1976d2;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-}
-
-.menu {
+.header-content {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
-.menu-link {
-    font-size: 15px;
-    font-weight: 500;
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
     text-decoration: none;
-    color: #374151;
-    position: relative;
-    transition: color 0.3s ease;
+    color: #111827;
+    letter-spacing: -0.5px;
 }
 
-.menu-link:hover {
+.logo span {
     color: #1976d2;
 }
 
-.menu-link.active::after {
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #4b5563;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1976d2;
+}
+
+.nav-link.active::after {
     content: '';
     position: absolute;
-    bottom: -4px;
     left: 0;
+    bottom: -6px;
     width: 100%;
     height: 2px;
     background: #1976d2;
-    border-radius: 4px;
+    border-radius: 2px;
+}
+
+.cta {
+    background: #1976d2;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta:hover {
+    background: #145ca0;
 }
 </style>

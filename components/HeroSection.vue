@@ -12,25 +12,30 @@
                     and delivering accessible, high-performance web apps.
                 </p>
                 <div class="hero-actions">
-                    <v-btn color="primary" class="cta" to="/projects">View Projects</v-btn>
+                    <v-btn class="cta gradient-btn" to="/projects">
+                        🚀 View Projects
+                    </v-btn>
                     <NuxtLink to="/about" class="learn-link">Learn More →</NuxtLink>
                 </div>
             </div>
 
-            <div class="hero-image-wrapper animated-float">
-                <div class="image-bg"></div>
+            <div class="hero-figure">
+                <svg class="bg-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="200" r="150" fill="#bfdbfe" opacity="0.4" />
+                    <circle cx="200" cy="200" r="100" fill="#93c5fd" opacity="0.4" />
+                </svg>
                 <img src="https://images.unsplash.com/photo-1549082984-1323b94df9a6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Creative Developer" class="hero-image" />
+                    alt="Creative Developer" class="hero-person" />
             </div>
         </v-container>
     </section>
 </template>
 
-
 <style scoped>
 .hero-section {
     background: linear-gradient(to bottom right, #f9fbfc, #eef2f7);
     padding: 6rem 1.5rem 4rem;
+    overflow: hidden;
 }
 
 .hero-grid {
@@ -87,7 +92,6 @@
     max-width: 560px;
 }
 
-
 .hero-actions {
     display: flex;
     align-items: center;
@@ -102,12 +106,21 @@
     }
 }
 
-.cta {
+.cta.gradient-btn {
     text-transform: none;
     font-weight: 600;
-    padding: 0.6rem 1.4rem;
     font-size: 1rem;
     border-radius: 10px;
+    padding: 0.65rem 1.6rem;
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    color: white;
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.25);
+    transition: all 0.3s ease;
+}
+
+.cta.gradient-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.35);
 }
 
 .learn-link {
@@ -122,53 +135,36 @@
     color: #0f5ab3;
 }
 
-.hero-image-wrapper {
+.hero-figure {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 520px;
-    flex-shrink: 0;
+    max-width: 450px;
+    margin-inline: auto;
     animation: float 6s ease-in-out infinite;
+    z-index: 0;
 }
 
-.hero-image {
+.bg-svg {
+    position: absolute;
+    top: -40px;
+    left: -40px;
     width: 100%;
-    border-radius: 18px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
-    position: relative;
-    z-index: 2;
+    height: auto;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+.hero-person {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50% 50% 40% 40%;
+    object-fit: cover;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease;
 }
 
-.hero-image:hover {
-    transform: scale(1.025) rotate(0.3deg);
-}
-
-.image-bg {
-    position: absolute;
-    top: -15%;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle at center, #c7d2fe, #dbeafe);
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.5;
-    z-index: 1;
-}
-
-
-.image-bg-shape {
-    position: absolute;
-    top: -30px;
-    left: -30px;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    background: radial-gradient(circle at top right, #dbeafe, #bfdbfe);
-    z-index: 1;
-    filter: blur(40px);
+.hero-person:hover {
+    transform: scale(1.025);
 }
 
 @keyframes float {

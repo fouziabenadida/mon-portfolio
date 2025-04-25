@@ -36,6 +36,7 @@
     background: linear-gradient(to bottom right, #f9fbfc, #eef2f7);
     padding: 6rem 1.5rem 4rem;
     overflow: hidden;
+
 }
 
 .hero-grid {

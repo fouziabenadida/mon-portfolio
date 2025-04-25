@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Header />
-    <v-main>
+    <v-main class="pa-0">
       <NuxtPage />
     </v-main>
     <Footer />
@@ -22,3 +22,18 @@ useHead({
   ],
 })
 </script>
+
+<style>
+html,
+body,
+#__nuxt {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.v-main {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>

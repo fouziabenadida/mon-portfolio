@@ -1,22 +1,42 @@
 <template>
-    <v-app-bar flat height="72" class="figma-header">
-        <v-container class="header-content">
-            <NuxtLink to="/" class="logo">Fuziya<span>.</span></NuxtLink>
 
-            <nav class="nav-links">
-                <NuxtLink v-for="(link, i) in links" :key="i" :to="link.to" class="nav-link"
-                    :class="{ active: $route.path === link.to }">
+    <div>
+        <v-app-bar app fixed flat height="72" class="figma-header">
+            <v-container class="header-content">
+                <NuxtLink to="/" class="logo">Fuziya<span>.</span></NuxtLink>
+
+                <nav class="nav-links">
+                    <NuxtLink v-for="(link, i) in links" :key="i" :to="link.to" class="nav-link"
+                        :class="{ active: $route.path === link.to }">
+                        {{ link.label }}
+                    </NuxtLink>
+                </nav>
+
+                <NuxtLink to="/contact" class="cta">Let’s Talk</NuxtLink>
+                <button class="burger" @click="menuOpen = !menuOpen">
+                    <span v-if="!menuOpen">☰</span>
+                    <span v-else>✕</span>
+                </button>
+            </v-container>
+        </v-app-bar>
+        <div class="mobile-menu" :class="{ open: menuOpen }">
+            <nav>
+                <NuxtLink v-for="(link, i) in links" :key="i" :to="link.to" class="mobile-link"
+                    @click="menuOpen = false">
                     {{ link.label }}
                 </NuxtLink>
+                <NuxtLink to="/contact" class="mobile-cta" @click="menuOpen = false">
+                    Let’s Talk
+                </NuxtLink>
             </nav>
-
-            <!-- CTA Button -->
-            <NuxtLink to="/contact" class="cta">Let’s Talk</NuxtLink>
-        </v-container>
-    </v-app-bar>
+        </div>
+    </div>
 </template>
 
+
 <script setup lang="ts">
+import { ref } from 'vue'
+const menuOpen = ref(false)
 const links = [
     { label: 'Home', to: '/' },
     { label: 'Projects', to: '/projects' },
@@ -37,7 +57,6 @@ const links = [
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
 }
 
 .logo {
@@ -94,5 +113,73 @@ const links = [
 
 .cta:hover {
     background: #145ca0;
+}
+
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.desktop-only {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+
+    .nav-links,
+    .cta {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+    }
+
+    .mobile-menu.open {
+        right: 0;
+    }
+
+    .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .mobile-link,
+    .mobile-cta {
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: #111827;
+        font-weight: 600;
+    }
+
+    .mobile-cta {
+        background: #1976d2;
+        color: white;
+        padding: 0.6rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    .mobile-cta:hover {
+        background: #145ca0;
+    }
 }
 </style>

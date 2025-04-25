@@ -1,23 +1,35 @@
 <template>
-    <section class="about-wrapper">
-        <div class="about-container">
-            <div class="about-intro">
-                <h2 class="title">About Me</h2>
-                <p class="subtitle">From frontend finesse to backend curiosity, here’s my path 🚀</p>
+    <section class="about-section">
+        <v-container class="about-container">
+            <div class="about-header">
+                <h2 class="about-title">About Me</h2>
+                <p class="about-subtitle">From design to deployment, this is my journey 🚀</p>
             </div>
 
-            <div class="about-timeline">
-                <div v-for="(item, index) in timeline" :key="index" class="timeline-entry">
-                    <div class="entry-line"></div>
-                    <div class="entry-dot" :style="{ backgroundColor: item.color }"></div>
-                    <div class="entry-content">
-                        <span class="entry-year">{{ item.year }}</span>
-                        <h3 class="entry-title">{{ item.title }}</h3>
-                        <p class="entry-description">{{ item.description }}</p>
+            <div class="timeline-list">
+                <div v-for="(item, index) in timeline" :key="index" class="timeline-card"
+                    :class="{ 'alternate': index % 2 !== 0 }">
+                    <div class="icon-wrapper">
+                        <span class="icon-circle" :style="{ backgroundColor: item.color }">
+                            <i class="material-icons">{{ item.icon }}</i>
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <span class="year">{{ item.year }}</span>
+                        <h3 class="card-title">{{ item.title }}</h3>
+                        <p class="card-text">{{ item.description }}</p>
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="about-footer">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80"
+                    alt="Fouzia Avatar" class="avatar" />
+                <a href="/cv/Fuziya-CV.pdf" download class="btn-download">
+                    📄 Download My CV
+                </a>
+            </div>
+        </v-container>
     </section>
 </template>
 
@@ -27,33 +39,39 @@ const timeline = [
         year: '2022',
         title: 'Frontend Developer at Intime Info',
         description: 'Worked on internal web tools using Vue.js and Tailwind.',
-        color: '#3B82F6'
+        color: '#3B82F6',
+        icon: 'code'
     },
     {
         year: '2023',
         title: 'Frontend Developer at Fair Finans',
         description: 'Built modern interfaces with Vue, Pinia, and Vuetify.',
-        color: '#10B981'
+        color: '#10B981',
+        icon: 'web'
     },
     {
         year: '2024',
         title: 'Learning Backend',
         description: 'Exploring Node.js, SQL, and C# with Entity Framework.',
-        color: '#EC4899'
+        color: '#EC4899',
+        icon: 'storage'
     },
     {
         year: 'Now',
         title: 'Looking for a position in France',
         description: 'Open to remote or relocation opportunities!',
-        color: '#8B5CF6'
-    },
+        color: '#8B5CF6',
+        icon: 'public'
+    }
 ]
 </script>
 
 <style scoped>
-.about-wrapper {
-    padding: 6rem 1.5rem;
-    background: linear-gradient(to right, #f0f4ff, #fafafa);
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.about-section {
+    background: radial-gradient(circle at top left, #f0f4ff 30%, #fafafa);
+    padding: 6rem 1.5rem 4rem;
     display: flex;
     justify-content: center;
 }
@@ -63,86 +81,121 @@ const timeline = [
     width: 100%;
 }
 
-.about-intro {
+.about-header {
     text-align: center;
     margin-bottom: 3rem;
 }
 
-.title {
+.about-title {
     font-size: 2.8rem;
     font-weight: 800;
     color: #1e293b;
 }
 
-.subtitle {
-    font-size: 1.1rem;
+.about-subtitle {
+    font-size: 1.05rem;
     color: #64748b;
     margin-top: 0.5rem;
 }
 
-.about-timeline {
+.timeline-list {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
-    position: relative;
+    gap: 2rem;
 }
 
-.timeline-entry {
+.timeline-card {
     display: flex;
+    gap: 1.5rem;
     align-items: flex-start;
-    position: relative;
-    padding-left: 2.5rem;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
 }
 
-.entry-line {
-    position: absolute;
-    left: 10px;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background-color: #e2e8f0;
-    z-index: 0;
+.timeline-card.alternate {
+    flex-direction: row-reverse;
 }
 
-.entry-dot {
-    position: absolute;
-    left: 2px;
-    top: 4px;
-    width: 16px;
-    height: 16px;
+.timeline-card:hover {
+    transform: translateY(-6px);
+}
+
+.icon-wrapper {
+    flex-shrink: 0;
+}
+
+.icon-circle {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.03);
-    z-index: 2;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.entry-content {
-    background: #fff;
-    padding: 1.5rem 1.8rem;
-    border-radius: 16px;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
+.card-content {
     flex: 1;
-    z-index: 1;
 }
 
-.entry-year {
-    font-size: 0.9rem;
+.year {
     font-weight: 700;
-    color: #6b7280;
-    margin-bottom: 0.2rem;
+    color: #94a3b8;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
     display: block;
 }
 
-.entry-title {
-    font-size: 1.25rem;
+.card-title {
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 0.6rem;
+    color: #1f2937;
+    margin-bottom: 0.3rem;
 }
 
-.entry-description {
+.card-text {
     font-size: 0.95rem;
     color: #475569;
     line-height: 1.6;
+}
+
+.about-footer {
+    text-align: center;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.btn-download {
+    background: linear-gradient(to right, #6366f1, #3b82f6);
+    color: white;
+    padding: 0.65rem 1.6rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+}
+
+.btn-download:hover {
+    background: #3b82f6;
 }
 </style>

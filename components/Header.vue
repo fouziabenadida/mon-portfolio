@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <v-app-bar app fixed flat height="72" class="figma-header">
             <v-container class="header-content">

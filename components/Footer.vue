@@ -1,20 +1,28 @@
 <template>
     <footer class="footer">
-        <v-container class="footer-content">
-            <div class="left">
-                <h2>Let’s build something <span>great</span> together.</h2>
-                <p class="sub">Contact me on any platform and let’s talk!</p>
+        <v-container class="footer-grid">
+            <div class="footer-left">
+                <h2 class="footer-title">
+                    Let’s build something <span>beautiful</span> together.
+                </h2>
+                <p class="footer-text">
+                    Open to freelance, remote collaborations, or cool side projects.
+                </p>
+                <a href="mailto:hello@fouzia.dev" class="footer-cta">Say Hello →</a>
             </div>
 
-            <div class="right">
-                <a v-for="item in socials" :key="item.label" :href="item.link" target="_blank" class="social-icon"
-                    :aria-label="item.label">
-                    <i :class="item.icon"></i>
-                </a>
+            <div class="footer-right">
+                <div v-for="item in socials" :key="item.label" class="footer-icon">
+                    <a :href="item.link" target="_blank" :aria-label="item.label">
+                        <i :class="item.icon"></i>
+                    </a>
+                </div>
             </div>
         </v-container>
 
-        <p class="copyright">© {{ new Date().getFullYear() }} — Fuziya Candaş</p>
+        <div class="footer-bottom">
+            © {{ new Date().getFullYear() }} — Fuziya Candaş. Crafted with ❤️ & Nuxt.
+        </div>
     </footer>
 </template>
 
@@ -40,68 +48,93 @@ const socials = [
 
 <style scoped>
 .footer {
-    background: #f8f9fa;
-    padding: 3rem 1.5rem 2rem;
+    padding: 4rem 1.5rem 2rem;
+    background: linear-gradient(to bottom right, #f8fafc, #eef2ff);
     border-top: 1px solid #e5e7eb;
     text-align: center;
 }
 
-.footer-content {
+.footer-grid {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem;
 }
 
 @media (min-width: 768px) {
-    .footer-content {
+    .footer-grid {
         flex-direction: row;
+        justify-content: space-between;
         text-align: left;
     }
 }
 
-.left h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1f2937;
+.footer-left {
+    max-width: 460px;
 }
 
-.left span {
-    color: #1976d2;
+.footer-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.3;
 }
 
-.sub {
-    color: #6b7280;
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
+.footer-title span {
+    color: #3b82f6;
 }
 
-.right {
+.footer-text {
+    color: #475569;
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.footer-cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: #3b82f6;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.footer-cta:hover {
+    background: #2563eb;
+}
+
+.footer-right {
     display: flex;
     gap: 1rem;
 }
 
-.social-icon {
-    width: 42px;
-    height: 42px;
-    background: #e2e8f0;
-    border-radius: 50%;
+.footer-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: white;
     display: grid;
     place-items: center;
-    color: #374151;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
-.social-icon:hover {
-    background: #1976d2;
-    color: white;
+.footer-icon:hover {
+    transform: translateY(-4px);
 }
 
-.copyright {
-    font-size: 0.85rem;
-    color: #9ca3af;
-    margin-top: 2rem;
+.footer-icon i {
+    font-size: 1.3rem;
+    color: #0f172a;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
 }
 </style>

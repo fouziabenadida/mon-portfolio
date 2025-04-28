@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   css: [
     'vuetify/styles',
     '@fontsource-variable/inter',
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    'animate.css/animate.min.css'
   ],
   build: {
     transpile: ['vuetify'],

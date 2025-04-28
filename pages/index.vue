@@ -11,4 +11,5 @@ import HeroSection from '~/components/HeroSection.vue'
 import TechStack from '~/components/TechStack.vue'
 import ProjectsSection from '~/components/ProjectsSection.vue'
 
+
 </script>

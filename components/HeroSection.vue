@@ -4,7 +4,7 @@
             <div class="hero-text">
                 <div class="hero-label">🪄 Frontend Developer</div>
                 <h1 class="hero-title">
-                    Hello, I'm <span>Fouzia</span> 👋<br />
+                    Hello, I'm <span>Fuziya</span> 👋<br />
                     I craft web experiences with creativity & code.
                 </h1>
                 <p class="hero-subtitle">

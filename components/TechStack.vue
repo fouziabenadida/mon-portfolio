@@ -35,7 +35,7 @@ const technologies = [
 
 <style scoped>
 .tech-stack {
-    padding: 10rem 1.5rem 4rem;
+    padding: 12rem 1.5rem 4rem;
     background: linear-gradient(to bottom right, #f1f5f9, #e5f4fd);
     text-align: center;
     position: relative;
@@ -47,7 +47,7 @@ const technologies = [
     top: -1px;
     left: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
 }
 
 .section-title {

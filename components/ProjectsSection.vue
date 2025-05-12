@@ -58,7 +58,14 @@ const projects = [
             'https://images.unsplash.com/photo-1655722725332-9925c96dd627?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         link: 'https://github.com/fouziabenadida/visa-bot',
         tech: ['Node.js', 'Telegram', 'Express']
-    }
+    },
+    {
+  title: 'Job Finder App',
+  description: 'A modern Nuxt & Vuetify app to search and save remote jobs.',
+  image: 'https://www.campus-atlantica.fr/wp-content/uploads/2024/08/pexels-photo-254045302015-6aa0976a79d26ffd25f5b8ddebed3e06d24a1003.jpg',
+ link: 'https://job-finder-app-omega.vercel.app/',
+  tech: ['Nuxt', 'Vuetify', 'TypeScript', 'Pinia']
+}
 ]
 </script>
 

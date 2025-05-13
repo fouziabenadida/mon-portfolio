@@ -13,7 +13,7 @@
             <p class="projects-sub">Selected works I've built with creativity and code</p>
 
             <v-row dense class="project-grid">
-                <v-col v-for="(project, i) in projects" :key="i" cols="12" sm="6" md="4" class="project-card">
+                <v-col v-for="(project, i) in projects" :key="i" cols="12" sm="6" md="4" class="project-card d-flex">
                     <div class="card">
                         <div class="card-image">
                             <img :src="project.image" :alt="project.title" />

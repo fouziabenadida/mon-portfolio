@@ -24,7 +24,10 @@
                         <div class="card-body">
                             <h3>{{ project.title }}</h3>
                             <p>{{ project.description }}</p>
-                            <a :href="project.link" target="_blank">View Project →</a>
+                            <div class="link-row">
+                                <a :href="project.link" target="_blank">🔗 Live Preview</a>
+                                <a :href="project.github" target="_blank">🐙 GitHub</a>
+                            </div>
                         </div>
                     </div>
                 </v-col>
@@ -41,6 +44,7 @@ const projects = [
         image:
             'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         link: 'https://github.com/fouziabenadida/mon-portfolio',
+        github: 'https://github.com/fouziabenadida/mon-portfolio',
         tech: ['Nuxt', 'Vue', 'Vuetify']
     },
     {
@@ -48,7 +52,8 @@ const projects = [
         description: 'Frontend for a sleek and modern e-commerce website.',
         image:
             'https://images.unsplash.com/photo-1634406688363-02ff7644d950?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        link: 'https://github.com/fouziabenadida/ecommerce-ui',
+        link: 'https://ecommerce-ui.vercel.app/',
+        github: 'https://github.com/fouziabenadida/ecommerce-ui',
         tech: ['Vue', 'Pinia', 'Tailwind']
     },
     {
@@ -56,16 +61,18 @@ const projects = [
         description: 'A real-time notification bot for visa appointments.',
         image:
             'https://images.unsplash.com/photo-1655722725332-9925c96dd627?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        link: 'https://github.com/fouziabenadida/visa-bot',
+        link: 'https://visa-bot.vercel.app/',
+        github: 'https://github.com/fouziabenadida/visa-bot',
         tech: ['Node.js', 'Telegram', 'Express']
     },
     {
-  title: 'Job Finder App',
-  description: 'A modern Nuxt & Vuetify app to search and save remote jobs.',
-  image: 'https://www.campus-atlantica.fr/wp-content/uploads/2024/08/pexels-photo-254045302015-6aa0976a79d26ffd25f5b8ddebed3e06d24a1003.jpg',
- link: 'https://job-finder-app-omega.vercel.app/',
-  tech: ['Nuxt', 'Vuetify', 'TypeScript', 'Pinia']
-}
+        title: 'Job Finder App',
+        description: 'A modern Nuxt & Vuetify app to search and save remote jobs.',
+        image: 'https://www.campus-atlantica.fr/wp-content/uploads/2024/08/pexels-photo-254045302015-6aa0976a79d26ffd25f5b8ddebed3e06d24a1003.jpg',
+        link: 'https://job-finder-app-omega.vercel.app/',
+        github: 'https://github.com/fouziabenadida/job-finder-app',
+        tech: ['Nuxt', 'Vuetify', 'TypeScript', 'Pinia']
+    }
 ]
 </script>
 
@@ -176,14 +183,27 @@ const projects = [
     margin-bottom: 1rem;
 }
 
-.card-body a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #1976d2;
-    text-decoration: none;
+.link-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.card-body a:hover {
-    text-decoration: underline;
+.link-row a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: #f3f4f6;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    color: #1f2937;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.link-row a:hover {
+    background-color: #ede9fe;
+    color: #4c1d95;
+    border-color: #c4b5fd;
 }
 </style>

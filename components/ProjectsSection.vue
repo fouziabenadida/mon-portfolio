@@ -43,7 +43,7 @@ const projects = [
         description: 'A personal portfolio to showcase my skills and projects.',
         image:
             'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        link: 'https://github.com/fouziabenadida/mon-portfolio',
+        link: 'https://portfolio-dev-cyan.vercel.app/',
         github: 'https://github.com/fouziabenadida/mon-portfolio',
         tech: ['Nuxt', 'Vue', 'Vuetify']
     },

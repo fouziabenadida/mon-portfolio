@@ -72,7 +72,16 @@ const projects = [
         link: 'https://job-finder-app-omega.vercel.app/',
         github: 'https://github.com/fouziabenadida/job-finder-app',
         tech: ['Nuxt', 'Vuetify', 'TypeScript', 'Pinia']
-    }
+    },
+{
+  title: 'Invox.dev',
+  description: 'An invoicing dashboard with client management, analytics, and PDF export. Built using Nuxt 3, TypeScript, and Tailwind CSS.',
+  image: 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-c5cc-61f4-8582-f0ec82971947/raw?se=2025-05-28T12%3A04%3A26Z&sp=r&sv=2024-08-04&sr=b&scid=beafc0cc-3ed5-559f-90ef-dc85087a0625&skoid=82a3371f-2f6c-4f81-8a78-2701b362559b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-28T07%3A40%3A09Z&ske=2025-05-29T07%3A40%3A09Z&sks=b&skv=2024-08-04&sig=ISp%2Bz7jFn5yTScLGm%2B3LRwuuWGOh5eQbD/RxHQQkCow%3D',
+  link: 'https://invox-dev.vercel.app/',
+  github: 'https://github.com/fouziabenadida/freelance-invoicing-dashboard',
+  tech: ['Nuxt', 'TypeScript', 'Tailwind CSS', 'Pinia', 'Chart.js', 'jsPDF']
+}
+     
 ]
 </script>
 
@@ -144,6 +153,7 @@ const projects = [
     width: 100%;
     height: 100%;
     object-fit: cover;
+     object-position: center;
 }
 
 .tech-list {

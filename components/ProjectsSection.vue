@@ -76,8 +76,8 @@ const projects = [
 {
   title: 'Invox.dev',
   description: 'An invoicing dashboard with client management, analytics, and PDF export. Built using Nuxt 3, TypeScript, and Tailwind CSS.',
-  image: 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-c5cc-61f4-8582-f0ec82971947/raw?se=2025-05-28T12%3A04%3A26Z&sp=r&sv=2024-08-04&sr=b&scid=beafc0cc-3ed5-559f-90ef-dc85087a0625&skoid=82a3371f-2f6c-4f81-8a78-2701b362559b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-28T07%3A40%3A09Z&ske=2025-05-29T07%3A40%3A09Z&sks=b&skv=2024-08-04&sig=ISp%2Bz7jFn5yTScLGm%2B3LRwuuWGOh5eQbD/RxHQQkCow%3D',
-  link: 'https://invox-dev.vercel.app/',
+  image: 'https://sdmntpritalynorth.oaiusercontent.com/files/00000000-7be8-6246-a311-9828eac3d56e/raw?se=2025-05-29T08%3A13%3A50Z&sp=r&sv=2024-08-04&sr=b&scid=4e2bf116-9087-56ba-8617-6e258a859eea&skoid=0a4a0f0c-99ac-4752-9d87-cfac036fa93f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-29T07%3A09%3A12Z&ske=2025-05-30T07%3A09%3A12Z&sks=b&skv=2024-08-04&sig=7Z3d3b17A%2BZJ9OpcWwxDeCVMHGYbT%2B9CjaMsdvxtzdo%3D',
+  link: 'https://freelance-invoicing-dashboard.vercel.app/dashboard',
   github: 'https://github.com/fouziabenadida/freelance-invoicing-dashboard',
   tech: ['Nuxt', 'TypeScript', 'Tailwind CSS', 'Pinia', 'Chart.js', 'jsPDF']
 }
